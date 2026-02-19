@@ -17,6 +17,8 @@ A common pattern is to initialize a Durable Object from [persistent storage](/du
 import { DurableObject } from "cloudflare:workers";
 
 export class Counter extends DurableObject {
+	private value: number; 
+
   constructor(ctx, env) {
     super(ctx, env);
     // `blockConcurrencyWhile()` ensures no requests are delivered until
